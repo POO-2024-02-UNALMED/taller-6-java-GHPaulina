@@ -1,16 +1,33 @@
-class Camion extends Vehiculo {
+package vehiculos;
+
+import java.util.ArrayList;
+
+public class Camion extends Vehiculo {
+    
     private int ejes;
-
-    public Camion(String placa, double precio, double peso, Fabricante fabricante, int ejes) {
-        super(placa, 2, 80, "Camión", precio, peso, "4X2", fabricante);
+    private static ArrayList<Camion> listadoCamiones = new ArrayList<Camion>();
+    
+    public Camion(String placa, String nombre, int precio, int peso, Fabricante fabricante, int ejes) {
+        super(placa, 2, 80, nombre, precio, peso, "4X2", fabricante);
         this.ejes = ejes;
+        agregarCamion(this);
     }
-
+    
     public int getEjes() {
         return ejes;
     }
-
-    public void setEjes(int ejes) {
-        this.ejes = ejes;
+    
+    public void setEjes(int nuevosEjes) {
+        ejes = nuevosEjes;
+    }
+    
+    // Método que agrega el camión a la lista
+    private void agregarCamion(Camion camion) {
+        listadoCamiones.add(camion);
+    }
+    
+    // Método que devuelve la cantidad de camiones
+    public static int cantidadCamiones() {
+        return listadoCamiones.size();
     }
 }
