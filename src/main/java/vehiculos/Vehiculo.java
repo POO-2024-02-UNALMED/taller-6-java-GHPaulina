@@ -42,6 +42,7 @@ public class Vehiculo {
 			fabricas.add(fabricante);
 		    contadores2.add(1);
 		}
+		
 	}
 	
 	public String getPlaca() {
@@ -116,23 +117,28 @@ public class Vehiculo {
 		cantidadVehiculos = nuevaCantidad;
 	}
 	
+	
 	public String vehiculosPorTipo() {
 		return "Automoviles: "+ Automovil.cantidadAutomoviles()+ "\n" + 
 				"Camionetas: "+ Camioneta.cantidadCamionetas()+ "\n" + 
 				"Camiones: "+ Camion.cantidadCamiones();
 	}
 	
+	
 	public static ArrayList<Pais> getPaises(){
 		return paises;
 	}
+	
 	
 	public static ArrayList<Integer> getContadores(){
 		return contadores;
 	}
 	
+	
 	public static ArrayList<Fabricante> getFabricas(){
 		return fabricas;
 	}
+		
 	
 	public static ArrayList<Integer> getContadores2(){
 		return contadores2;
